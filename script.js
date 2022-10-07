@@ -53,9 +53,3 @@ const calculadoraFolhaPagamento = {
         }
     }
 }
-
-console.log(calculadoraFolhaPagamento.inss());
-console.log(calculadoraFolhaPagamento.falta());
-console.log(calculadoraFolhaPagamento.irrf());
-console.log(calculadoraFolhaPagamento.fgts());
-console.log(calculadoraFolhaPagamento.horaExtra());
