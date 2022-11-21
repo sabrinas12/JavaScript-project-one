@@ -1,8 +1,9 @@
 const calculadoraFolhaPagamento = {
-    inss: function(valorPagamento) {
-        let resultado = Number(valorPagamento);
-        if (Number.isNaN(resultado)) {
-            throw new Error('Por favor, digite um valor');
+    inss: function (valorPagamento) {
+        if (valorPagamento == undefined) {
+            return `Por favor, digite um valor`;
+        } else if (valorPagamento <= 0) {
+            return `Por favor, digite um número maior do que zero`;
         } else {
         } if (valorPagamento <= 1212) {
             return `O valor de contribuição do INSS é ${valorPagamento * 0.075}`;
@@ -15,17 +16,19 @@ const calculadoraFolhaPagamento = {
         }
     },
     falta: function(valorPagamento) {
-        let resultado = Number(valorPagamento);
-        if (Number.isNaN(resultado)) {
-            throw new Error('Por favor, digite um valor');
+        if (valorPagamento == undefined) {
+            return `Por favor, digite um valor`;
+        } else if (valorPagamento <= 0) {
+            return `Por favor, digite um número maior do que zero`;
         } else {
             return `O valor da falta diária de um salário de ${valorPagamento} é ${valorPagamento / 30}`;  
         }
     },
     irrf: function(valorPagamento) {
-        let resultado = Number(valorPagamento);
-        if (Number.isNaN(resultado)) {
-            throw new Error('Por favor, digite um valor');
+        if (valorPagamento == undefined) {
+            return `Por favor, digite um valor`;
+        } else if (valorPagamento <= 0) {
+            return `Por favor, digite um número maior do que zero`;
         } else {
         if (valorPagamento <= 1903.98) {
             return 'Isento de pagamento. Salário abaixo do valor de tabela.';
@@ -41,17 +44,19 @@ const calculadoraFolhaPagamento = {
         }
     },
     fgts: function(valorPagamento) {
-        let resultado = Number(valorPagamento);
-        if (Number.isNaN(resultado)) {
-            throw new Error('Por favor, digite um valor');
+        if (valorPagamento == undefined) {
+            return `Por favor, digite um valor`;
+        } else if (valorPagamento <= 0) {
+            return `Por favor, digite um número maior do que zero`;
         } else {
             return `O valor de pagamento do FGTS é ${valorPagamento * 0.08}`;  
         }
     },
     horaExtra: function(valorPagamento, h50, h100) {
-        let resultado = Number(valorPagamento);
-        if (Number.isNaN(resultado)) {
-            throw new Error('Por favor, digite um valor');
+        if (valorPagamento == undefined) {
+            return `Por favor, digite as informações solicitadas`;
+        } else if (valorPagamento <= 0) {
+            return `Por favor, digite um número maior do que zero e as demais informações solicitadas`;
         } else if (h50 == true && h100 == false) {
             return `O valor da hora extra de 50% é de ${(valorPagamento/220) * 0.5}`;
         } else if (h50 == false && h100 == true) {
